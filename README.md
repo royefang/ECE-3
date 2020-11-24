@@ -1,3 +1,2 @@
-# ECE3
-UCLA ECE 3 Spring 2020
-This program was written for the TI-RSLK car inside Energia (similar to Arduino).
+# ECE 3
+UCLA ECE 3 - Introduction to Electrical Engineering, taken with Mike Briggs in Spring 2020.
