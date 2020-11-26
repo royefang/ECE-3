@@ -3,10 +3,15 @@ UCLA ECE 3 - Introduction to Electrical Engineering, taken with Mike Briggs in S
 The final project was a TI-RSLK line-following car, programmed in Energia. 
 The car uses IR sensors in a PID feedback algorithm, steering the car through any arbitrary path.
 In this project, the paths were a straight line and a circular loop.
+&nbsp;
+Videos of the car
+https://www.youtube.com/playlist?list=PLhkditZJ5cy3mfri6lQbu5XzSS_EzOfhS
+&nbsp;
+Straight Track
+--- 
+![](straight.png) 
 
-Videos of my
-
-label 1 | label 2
---- | ---
-![](straight.png) | ![](ribbon.png)
+Ribbon Track
+---
+![](ribbon.png)
 
