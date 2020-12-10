@@ -63,15 +63,15 @@ void loop() {
     
     sensorFusion();
     
-    //counter = 1: away from start, counter = 3: return to start
+    //counter = 0: away from start, counter = 2: return to start
     if(counter == 0 || counter == 2)
         followPath();
     
-    //counter = 2: do a doughnut
+    //counter = 1: do a doughnut
     if(counter == 1)
         doughnut();
    
-    //finish
+    //counter = 3: finish
     if(counter == 3)
         finish();
 }
