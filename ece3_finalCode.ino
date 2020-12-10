@@ -1,6 +1,4 @@
 #include "ECE3.h"
-uint16_t sensorValues[8];
-
 ////////////////////////////////////
 ///////////Defining Pins////////////
 ////////////////////////////////////
@@ -17,6 +15,9 @@ const int right_pwm_pin = 39;
 //////////////Globals///////////////
 ////////////////////////////////////
 
+//IR sensor array
+uint16_t sensorValues[8];
+
 //For calibrating the sensors
 int rawCombined;
 int prevRawCombined;
@@ -31,9 +32,7 @@ int rightDefaultSpeed = 155;
 //Keeps track of what the car is doing
 int counter;
 
-
-void setup()
-{
+void setup() {
     //Serial.begin(9600);
     ECE3_Init();
 
@@ -52,7 +51,7 @@ void setup()
     digitalWrite(11,HIGH);
     
     //Car starts at "followPath()"
-    counter = 1;
+    counter = 0;
 
     //Initial previous fused value
     prevFused = 0;
@@ -60,35 +59,29 @@ void setup()
     delay(5000);
 }
 
-void loop()
-{  
+void loop() {  
+    
     sensorFusion();
-
+    
     //counter = 1: away from start, counter = 3: return to start
-    if(counter == 1 || counter == 3)
-    {
+    if(counter == 0 || counter == 2)
         followPath();
-    }
-
+    
     //counter = 2: do a doughnut
-    if(counter == 2)
-    {
+    if(counter == 1)
         doughnut();
-    }
-
+   
     //finish
-    if(counter == 4)
-    {
+    if(counter == 3)
         finish();
-    }
 }
 
 ////////////////////////////////////
 ///////////Sensor Fusion////////////
 ////////////////////////////////////
 
-void sensorFusion()
-{
+void sensorFusion() {
+    
   //Read raw sensor values
   ECE3_read_IR(sensorValues);
 
@@ -110,8 +103,8 @@ void sensorFusion()
 ///////////Follow Path//////////////
 ////////////////////////////////////
 
-void followPath()
-{  
+void followPath() {  
+    
     int leftSpeed;
     int rightSpeed;
     int PDcontroller;
@@ -144,10 +137,8 @@ void followPath()
 
     //If the car hits a black line, engage "doughnut" or "finish"
     if(prevFused == 0 && steer == 0)
-    {
         counter++;
-    }
-
+    
     //Set current fused value as "prev" for next iteration
     prevFused = fused;
 }
@@ -156,8 +147,8 @@ void followPath()
 //////////////Doughnut//////////////
 ////////////////////////////////////
 
-void doughnut()
-{  
+void doughnut() {  
+    
     //Change direction of left wheel
     digitalWrite(29,HIGH);
 
@@ -180,8 +171,8 @@ void doughnut()
 ////////////////Finish//////////////
 ////////////////////////////////////
 
-void finish()
-{  
+void finish() {  
+ 
     //Turn direction of left wheel
     digitalWrite(29,HIGH);
 
