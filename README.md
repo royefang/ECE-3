@@ -8,7 +8,7 @@ https://www.youtube.com/playlist?list=PLhkditZJ5cy3mfri6lQbu5XzSS_EzOfhS
 
 Straight Track
 --- 
-![](straighttrack.png) 
+![](straighttrack.png) | ![](ribbontrack.png)
 
 Ribbon Track
 ---
