@@ -8,11 +8,11 @@ https://www.youtube.com/playlist?list=PLhkditZJ5cy3mfri6lQbu5XzSS_EzOfhS
 
 Straight Track
 --- 
-![](straighttrack.png)
+![straight](./media/straighttrack.png)
 
 Ribbon Track
 ---
-![](ribbontrack.png)
+![ribbon](./media/ribbontrack.png)
 
 This was the final project for UCLA ECE 3 - Introduction to Electrical Engineering, taken with Mike Briggs in Spring 2020.
 
